@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
+import PrivateRoute from '../containers/PrivateRoute';
 import ChatPage from '../containers/ChatPage';
 import WelcomePage from '../containers/WelcomePage';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
@@ -24,7 +25,7 @@ const App =({ classes }) => (
       <div className={classes.root}>
         <Switch>
           <Route exact path="/(welcome)?" component={WelcomePage} />
-          <Route path="/chat" component={ChatPage} />
+          <PrivateRoute path="/chat/:chatId?" component={ChatPage} />
           <Redirect to="/" />
         </Switch>
       </div>
