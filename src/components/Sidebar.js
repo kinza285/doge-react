@@ -6,11 +6,6 @@ import BottomNav from './BottomNav';
 import ChatList from './ChatList';
 import Search from './Search';
 import NewChatButton from './NewChatButton';
-import TextField from '@material-ui/core/TextField';
-import RestoreIcon from '@material-ui/icons/Restore';
-import ExploreIcon from '@material-ui/icons/Explore';
-import BottomNavigationAction from "@material-ui/core/BottomNavigationAction/BottomNavigationAction";
-import BottomNavigation from "@material-ui/core/BottomNavigation";
 
 
 const styles = theme => ({
@@ -39,12 +34,6 @@ class Sidebar extends React.Component {
   }
 
   handleTab = (value) =>  {
-    this.setState({
-      activeTab: value,
-    })
-  }
-
-  handleTabChange = (event, value) => {
     this.setState({
       activeTab: value,
     })
