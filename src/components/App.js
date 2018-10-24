@@ -6,6 +6,7 @@ import ChatPage from '../containers/ChatPage';
 import WelcomePage from '../containers/WelcomePage';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import configureStore from '../store';
+import history from '../utils/history';
 
 const styles = theme => ({
   root: {
@@ -21,7 +22,7 @@ const store = configureStore();
 
 const App =({ classes }) => (
   <Provider store={store}>
-    <Router>
+    <Router history={history}>
       <div className={classes.root}>
         <Switch>
           <Route exact path="/(welcome)?" component={WelcomePage} />
