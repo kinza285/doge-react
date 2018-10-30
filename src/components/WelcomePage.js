@@ -10,7 +10,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab  from '@material-ui/core/Tab';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
-
+import ErrorMessage from './ErrorMessage';
 
 const styles = theme => ({
   paper: {
@@ -35,7 +35,7 @@ class WelcomePage extends React.Component {
 
   render() {
     const {
-      classes, signup, login, isAuthenticated,
+      classes, signup, login, isAuthenticated, error
     } = this.props;
 
     const { activeTab } = this.state;
@@ -69,6 +69,7 @@ class WelcomePage extends React.Component {
             </Paper>
           </Grid>
         </Grid>
+        <ErrorMessage error={error} />
       </React.Fragment>
     );
   }

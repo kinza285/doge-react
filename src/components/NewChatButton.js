@@ -76,7 +76,7 @@ class NewChatButton extends React.Component {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, disabled  } = this.props;
     const { open, title } = this.state;
 
     return (
@@ -84,6 +84,7 @@ class NewChatButton extends React.Component {
         <Button
           variant="fab"
           color="primary"
+          disabled={disabled}
           className={classes.newChatButton}
           onClick={this.toggleModal}
         >
