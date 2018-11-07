@@ -35,7 +35,6 @@
     "format": "prettier-eslint --write '**/*.{js,json}'",
     "deploy": "npm run build && gh-pages -d build -m \"Updated at $(date +'%a, %d %b %Y, %T, %Z')\" --add",
     "precommit": "lint-staged",
-    "prepush": "npm t"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
