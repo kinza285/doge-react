@@ -43,7 +43,7 @@ class LoginForm extends React.Component {
     event.preventDefault();
 
     const { username, password } = this.state;
-
+    // eslint-disable-next-line
     this.props.onSubmit(username.value, password.value);
   };
 
@@ -81,7 +81,7 @@ class LoginForm extends React.Component {
         />
         <Button
           fullWidth
-          variant="raised"
+          variant="contained"
           type="submit"
           color="primary"
           className={classes.signUpButton}

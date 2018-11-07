@@ -7,7 +7,6 @@ export default function titleInitials(title) {
       .slice(0, 2)
       .join('');
   } catch (e) {
-    console.error(e);
     return '🐶';
   }
 }

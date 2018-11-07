@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { withStyles } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
@@ -7,14 +8,14 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
-import Tab  from '@material-ui/core/Tab';
+import Tab from '@material-ui/core/Tab';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
 import ErrorMessage from './ErrorMessage';
 
 const styles = theme => ({
   paper: {
-    marginTop: theme.spacing.unit * 3 + 64,
+    marginTop: (theme.spacing.unit * 3) + 64,
     width: 500,
   },
   tabContent: {
@@ -23,11 +24,26 @@ const styles = theme => ({
 });
 
 class WelcomePage extends React.Component {
+  static propTypes = {
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
+    signup: PropTypes.func.isRequired,
+    login: PropTypes.func.isRequired,
+    recieveAuth: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
+    error: PropTypes.instanceOf(Error),
+  };
+
+  static defaultProps = {
+    error: null,
+  };
 
   state = {
     activeTab: 0,
   };
 
+  componentDidMount() {
+    this.props.recieveAuth();
+  }
 
   handleTabChange = (event, value) => {
     this.setState({ activeTab: value });
@@ -35,7 +51,7 @@ class WelcomePage extends React.Component {
 
   render() {
     const {
-      classes, signup, login, isAuthenticated, error
+      classes, signup, login, isAuthenticated, error,
     } = this.props;
 
     const { activeTab } = this.state;

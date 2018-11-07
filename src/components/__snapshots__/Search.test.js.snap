@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Search /> renders correctly 1`] = `
+<div
+  className="Search-drawerHeader-36"
+>
+  <div
+    aria-describedby={undefined}
+    className="MuiFormControl-root-37 MuiFormControl-marginNormal-38 MuiFormControl-fullWidth-40"
+    data={null}
+  >
+    <div
+      className="MuiInputBase-root-54 MuiInput-root-41 MuiInput-underline-45 MuiInputBase-fullWidth-63 MuiInput-fullWidth-48 MuiInputBase-formControl-55 MuiInput-formControl-42"
+      onClick={[Function]}
+    >
+      <input
+        aria-invalid={false}
+        autoComplete={undefined}
+        autoFocus={undefined}
+        className="MuiInputBase-input-64 MuiInput-input-49"
+        defaultValue={undefined}
+        disabled={false}
+        id={undefined}
+        name={undefined}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={undefined}
+        onKeyUp={undefined}
+        placeholder="Search chats..."
+        readOnly={undefined}
+        required={false}
+        rows={undefined}
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;

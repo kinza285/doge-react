@@ -1,5 +1,5 @@
 import React from 'react';
-//import fetch from 'isomorphic-fetch';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -11,6 +11,10 @@ const styles = theme => ({
 });
 
 class SignupForm extends React.Component {
+  static propTypes = {
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
+    onSubmit: PropTypes.func.isRequired,
+  };
 
   state = {
     username: {
@@ -60,10 +64,9 @@ class SignupForm extends React.Component {
 
     const { username, password } = this.state;
 
-
-    this.props.onSubmit(username.value, password.value)
-}
-
+    // eslint-disable-next-line
+    this.props.onSubmit(username.value, password.value);
+  };
 
   render() {
     const { classes } = this.props;
@@ -112,7 +115,7 @@ class SignupForm extends React.Component {
         />
         <Button
           fullWidth
-          variant="raised"
+          variant="contained"
           type="submit"
           color="primary"
           className={classes.signUpButton}

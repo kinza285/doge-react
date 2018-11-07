@@ -6,14 +6,14 @@ import Modal from '@material-ui/core/Modal';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-
+import PropTypes from 'prop-types';
 
 const styles = theme => ({
   newChatButton: {
     position: 'absolute',
     left: 'auto',
     right: theme.spacing.unit * 3,
-    bottom: theme.spacing.unit * 3 + 48, // + bottom navigation
+    bottom: (theme.spacing.unit * 3) + 48, // + bottom navigation
   },
   modalWrapper: {
     display: 'flex',
@@ -23,31 +23,38 @@ const styles = theme => ({
   modal: {
     width: '30%',
     minWidth: '300px',
-    padding: theme.spacing.unit * 3
-  }
+    padding: theme.spacing.unit * 3,
+  },
 });
 
 class NewChatButton extends React.Component {
+  static propTypes = {
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
+    onClick: PropTypes.func.isRequired,
+    disabled: PropTypes.bool.isRequired,
+  };
+
   state = {
     open: false,
     title: {
       value: '',
       isValid: true,
-    }
-  }
+    },
+  };
 
   toggleModal = () => {
-    this.setState({ open: !this.state.open })
-  }
+    // eslint-disable-next-line
+    this.setState({ open: !this.state.open });
+  };
 
   handleTitleChange = (event) => {
     this.setState({
       title: {
         value: event.target.value,
         isValid: true,
-      }
+      },
     });
-  }
+  };
 
   handleCreateClick = (event) => {
     event.preventDefault();
@@ -59,12 +66,12 @@ class NewChatButton extends React.Component {
         title: {
           value: title.value,
           isValid: false,
-        }
-      })
+        },
+      });
 
       return;
     }
-
+    // eslint-disable-next-line
     this.props.onClick(title.value);
     this.toggleModal();
     this.setState({
@@ -73,10 +80,10 @@ class NewChatButton extends React.Component {
         isValid: true,
       },
     });
-  }
+  };
 
   render() {
-    const { classes, disabled  } = this.props;
+    const { classes, disabled } = this.props;
     const { open, title } = this.state;
 
     return (
@@ -90,11 +97,7 @@ class NewChatButton extends React.Component {
         >
           <AddIcon />
         </Button>
-        <Modal
-          open={open}
-          className={classes.modalWrapper}
-          onClose={this.toggleModal}
-        >
+        <Modal open={open} className={classes.modalWrapper} onClose={this.toggleModal}>
           <Paper className={classes.modal}>
             <Typography variant="title" id="modal-title">
               Create new chat
@@ -111,10 +114,7 @@ class NewChatButton extends React.Component {
               onChange={this.handleTitleChange}
               error={!title.isValid}
             />
-            <Button
-              color="primary"
-              onClick={this.handleCreateClick}
-            >
+            <Button color="primary" onClick={this.handleCreateClick}>
               Create
             </Button>
           </Paper>

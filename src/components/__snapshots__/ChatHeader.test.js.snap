@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChatHeader /> renders correctly 1`] = `
+<header
+  className="MuiPaper-root-89 MuiPaper-elevation4-95 MuiAppBar-root-80 MuiAppBar-positionFixed-81 MuiAppBar-colorPrimary-87 mui-fixed ChatHeader-appBar-78"
+>
+  <div
+    className="MuiToolbar-root-116 MuiToolbar-regular-118 MuiToolbar-gutters-117"
+    color="contrast"
+  >
+    Avatar
+    <h2
+      className="MuiTypography-root-120 MuiTypography-title-126 ChatHeader-appBarTitle-79"
+    >
+      My Chat
+      ChatMenu
+    </h2>
+    UserMenu
+  </div>
+</header>
+`;
+
+exports[`<ChatHeader /> renders without active chat 1`] = `
+<header
+  className="MuiPaper-root-89 MuiPaper-elevation4-95 MuiAppBar-root-80 MuiAppBar-positionFixed-81 MuiAppBar-colorPrimary-87 mui-fixed ChatHeader-appBar-78"
+>
+  <div
+    className="MuiToolbar-root-116 MuiToolbar-regular-118 MuiToolbar-gutters-117"
+    color="contrast"
+  >
+    <h2
+      className="MuiTypography-root-120 MuiTypography-title-126 ChatHeader-appBarTitle-79"
+    >
+      DogeCodes React Chat
+    </h2>
+    UserMenu
+  </div>
+</header>
+`;

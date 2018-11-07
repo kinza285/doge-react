@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NewChatButton /> renders button 1`] = `
+<button
+  className="MuiButtonBase-root-80 MuiButton-root-54 MuiButton-fab-71 MuiButton-contained-65 MuiButton-containedPrimary-66 MuiButton-raised-68 MuiButton-raisedPrimary-69 NewChatButton-newChatButton-51"
+  disabled={false}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex="0"
+  type="button"
+>
+  <span
+    className="MuiButton-label-55"
+  >
+    <svg
+      aria-hidden="true"
+      className="MuiSvgIcon-root-83"
+      color={undefined}
+      focusable="false"
+      role="presentation"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+  </span>
+  <span
+    className="MuiTouchRipple-root-94"
+  />
+</button>
+`;
+
+exports[`<NewChatButton /> renders disabled button 1`] = `
+<button
+  className="MuiButtonBase-root-80 MuiButtonBase-disabled-81 MuiButton-root-54 MuiButton-fab-71 MuiButton-contained-65 MuiButton-containedPrimary-66 MuiButton-raised-68 MuiButton-raisedPrimary-69 MuiButton-disabled-74 NewChatButton-newChatButton-51"
+  disabled={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    className="MuiButton-label-55"
+  >
+    <svg
+      aria-hidden="true"
+      className="MuiSvgIcon-root-83"
+      color={undefined}
+      focusable="false"
+      role="presentation"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+  </span>
+</button>
+`;

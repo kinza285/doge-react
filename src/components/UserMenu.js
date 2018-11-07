@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
@@ -19,25 +20,37 @@ const styles = theme => ({
   modal: {
     width: '30%',
     minWidth: '300px',
-    padding: theme.spacing.unit * 3
-  }
+    padding: theme.spacing.unit * 3,
+  },
 });
 
 class UserMenu extends React.Component {
+  static propTypes = {
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
+    activeUser: PropTypes.shape({
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+      username: PropTypes.string,
+    }).isRequired,
+    onEditProfileClick: PropTypes.func.isRequired,
+    onLogoutClick: PropTypes.func.isRequired,
+    disabled: PropTypes.bool.isRequired,
+  };
+
   state = {
     isModalOpen: false,
     anchorEl: null,
     username: '',
     firstName: '',
     lastName: '',
-  }
+  };
 
   componentWillReceiveProps(nextProps) {
     this.setState({
       username: nextProps.activeUser.username,
       firstName: nextProps.activeUser.firstName,
       lastName: nextProps.activeUser.lastName,
-    })
+    });
   }
 
   handleClick = (event) => {
@@ -52,12 +65,13 @@ class UserMenu extends React.Component {
     this.setState({
       [event.target.name]: event.target.value,
     });
-  }
+  };
 
   toggleEditProfileModal = () => {
-    this.setState({ isModalOpen: !this.state.isModalOpen })
+    // eslint-disable-next-line
+    this.setState({ isModalOpen: !this.state.isModalOpen });
     this.handleClose();
-  }
+  };
 
   handleSaveClick = () => {
     this.props.onEditProfileClick({
@@ -66,12 +80,12 @@ class UserMenu extends React.Component {
       lastName: this.state.lastName,
     });
     this.toggleEditProfileModal();
-  }
+  };
 
   handleLogoutClick = () => {
     this.props.onLogoutClick();
     this.handleClose();
-  }
+  };
 
   render() {
     const { anchorEl, isModalOpen } = this.state;
@@ -94,8 +108,8 @@ class UserMenu extends React.Component {
           open={Boolean(anchorEl)}
           onClose={this.handleClose}
         >
-         <MenuItem onClick={this.toggleEditProfileModal}>Edit Profile</MenuItem>
-         <MenuItem onClick={this.handleLogoutClick}>Logout</MenuItem>
+          <MenuItem onClick={this.toggleEditProfileModal}>Edit Profile</MenuItem>
+          <MenuItem onClick={this.handleLogoutClick}>Logout</MenuItem>
         </Menu>
         <Modal
           open={isModalOpen}
@@ -140,9 +154,7 @@ class UserMenu extends React.Component {
             <Button color="primary" onClick={this.handleSaveClick}>
               Save
             </Button>
-            <Button onClick={this.toggleEditProfileModal}>
-              Close
-            </Button>
+            <Button onClick={this.toggleEditProfileModal}>Close</Button>
           </Paper>
         </Modal>
       </React.Fragment>
