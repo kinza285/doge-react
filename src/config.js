@@ -1,4 +1,3 @@
-// for heroku
 export default {
   API_URI: process.env.NODE_ENV === 'production'
     ? 'https://dogecodes-chat-api.herokuapp.com/v1'
