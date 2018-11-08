@@ -2,7 +2,6 @@
   "name": "react-chat",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://dogecodes.github.io/react-chat",
   "dependencies": {
     "classnames": "^2.2.5",
     "history": "^4.7.2",
